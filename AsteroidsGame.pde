@@ -10,9 +10,9 @@ public void setup()
 public void draw() 
 {
     background(0);
+    for(int i = 0; i<sue.length; i++) {sue[i].show();}
     bob.show();
     bob.move();
-    for(int i = 0; i<sue.length; i++) {sue[i].show();}
   }
 public void keyPressed(){
   if(keyCode == LEFT){

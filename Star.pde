@@ -1,12 +1,14 @@
 class Star
 {
   private int myX, myY;
+  private int twinkle;
   Star(){
-    myX=(int)Math.random()*1000;
-    myY=(int)Math.random()*1000; 
+    myX=(int)(Math.random()*1000);
+    myY=(int)(Math.random()*1000);
   }
   public void show(){
-    fill(191, 246, 255);
-    ellipse(myX,myY,3,3);
+    noStroke();
+    fill(210, 122, 255, (int)(Math.random()*1000));
+    ellipse(myX,myY,2,2);
   }
 }
