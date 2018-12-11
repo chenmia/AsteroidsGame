@@ -1,10 +1,12 @@
 Spaceship bob;
 ArrayList<Asteroid> joe = new ArrayList<Asteroid>();
-Star[] sue = new Star[500];
+Star[] sue = new Star[1000];
 ArrayList<Bullet> dan = new ArrayList<Bullet>();
+int width = 700;
+int height = 700;
 public void setup() 
 {
-  size(1000,1000);
+  size(700,700);
   background(0);
   bob = new Spaceship();
   for(int i = 0; i<sue.length; i++) {sue[i] = new Star();}

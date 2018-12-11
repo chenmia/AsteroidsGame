@@ -1,5 +1,6 @@
 class Bullet extends Floater{
   Bullet(Spaceship theShip) {
+    myStroke = 0;
     myCenterX = theShip.getX();
     myCenterY = theShip.getY();
     myPointDirection = theShip.getPointDirection();
@@ -10,8 +11,8 @@ class Bullet extends Floater{
 
 public void show() {
   noStroke();
-  fill(255,0,0);
-  ellipse((float)myCenterX, (float)myCenterY, 5, 5);
+  fill(66, 244, 244);
+  ellipse((float)myCenterX, (float)myCenterY, 8, 8);
 }
 public void move() {
     myCenterX += myDirectionX;    
