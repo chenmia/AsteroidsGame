@@ -26,6 +26,16 @@ public void draw()
       dan.get(i).show();
       dan.get(i).move();
     }
+    for(int i = 0; i<dan.size(); i++){
+      for(int x = 0; x<joe.size(); x++){
+        float bulletDist = dist(dan.get(i).getX(), dan.get(i).getY(), joe.get(x).getX(), joe.get(x).getY());
+        if(bulletDist<20){
+        dan.remove(i);
+        joe.remove(x);
+        break;
+      }
+      }
+    }
     bob.show();
     bob.move();
   }
@@ -47,7 +57,7 @@ public void keyPressed(){
     bob.setY((int)(Math.random()*1000));
     bob.setDirectionX(0);
     bob.setDirectionY(0);
-    bob.setPointDirection((int)Math.random()*361);
+    bob.setPointDirection((int)(Math.random()*361));
   } 
   if(keyCode == ENTER) {
     dan.add(new Bullet(bob));
