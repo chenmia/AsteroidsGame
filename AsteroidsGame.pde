@@ -1,66 +1,66 @@
-Spaceship bob;
-ArrayList<Asteroid> joe = new ArrayList<Asteroid>();
-Star[] sue = new Star[1000];
-ArrayList<Bullet> dan = new ArrayList<Bullet>();
+Spaceship ship;
+ArrayList<Asteroid> rocks = new ArrayList<Asteroid>();
+Star[] stars = new Star[1000];
+ArrayList<Bullet> bullets = new ArrayList<Bullet>();
 int width = 700;
 int height = 700;
 public void setup() 
 {
   size(700,700);
   background(0);
-  bob = new Spaceship();
-  for(int i = 0; i<sue.length; i++) {sue[i] = new Star();}
-  for(int i = 0; i<20; i++) {joe.add(new Asteroid());}
+  ship = new Spaceship();
+  for(int i = 0; i<stars.length; i++) {stars[i] = new Star();}
+  for(int i = 0; i<20; i++) {rocks.add(new Asteroid());}
 } 
 public void draw() 
 {
     background(0);
-    for(int i = 0; i<sue.length; i++) {sue[i].show();}
-    for(int i = 0; i<joe.size(); i++) {
-      joe.get(i).show();
-      joe.get(i).move();
-      float distance = dist(bob.getX(), bob.getY(), joe.get(i).getX(), joe.get(i).getY());
-      if(distance<20){joe.remove(i);}
+    for(int i = 0; i<stars.length; i++) {stars[i].show();}
+    for(int i = 0; i<rocks.size(); i++) {
+      rocks.get(i).show();
+      rocks.get(i).move();
+      float distance = dist(ship.getX(), ship.getY(), rocks.get(i).getX(), rocks.get(i).getY());
+      if(distance<20){rocks.remove(i);}
     }
-    for(int i = 0; i<dan.size(); i++) {
-      dan.get(i).show();
-      dan.get(i).move();
+    for(int i = 0; i<bullets.size(); i++) {
+      bullets.get(i).show();
+      bullets.get(i).move();
     }
-    for(int i = 0; i<dan.size(); i++){
-      for(int x = 0; x<joe.size(); x++){
-        float bulletDist = dist(dan.get(i).getX(), dan.get(i).getY(), joe.get(x).getX(), joe.get(x).getY());
+    for(int i = 0; i<bullets.size(); i++){
+      for(int x = 0; x<rocks.size(); x++){
+        float bulletDist = dist(bullets.get(i).getX(), bullets.get(i).getY(), rocks.get(x).getX(), rocks.get(x).getY());
         if(bulletDist<20){
-        dan.remove(i);
-        joe.remove(x);
+        bullets.remove(i);
+        rocks.remove(x);
         break;
       }
       }
     }
-    bob.show();
-    bob.move();
+    ship.show();
+    ship.move();
   }
 public void keyPressed(){
   if(keyCode == UP){
-    bob.turn(-5);
+    ship.turn(-5);
     }
   if(keyCode == DOWN){
-    bob.turn(5);
+    ship.turn(5);
     }
   if(keyCode == RIGHT){
-    bob.accelerate(0.3);
+    ship.accelerate(0.3);
   }
   if(keyCode == LEFT){
-    bob.accelerate(-0.3);
+    ship.accelerate(-0.3);
   }
   if(keyCode == TAB){
-    bob.setX((int)(Math.random()*1000));
-    bob.setY((int)(Math.random()*1000));
-    bob.setDirectionX(0);
-    bob.setDirectionY(0);
-    bob.setPointDirection((int)(Math.random()*361));
+    ship.setX((int)(Math.random()*1000));
+    ship.setY((int)(Math.random()*1000));
+    ship.setDirectionX(0);
+    ship.setDirectionY(0);
+    ship.setPointDirection((int)(Math.random()*361));
   } 
   if(keyCode == ENTER) {
-    dan.add(new Bullet(bob));
+    bullets.add(new Bullet(ship));
   }
   }
     
