@@ -8,8 +8,8 @@ class Asteroid extends Floater {
   yCorners = yS;
   myColor = color(16, 255, 0);
   myStroke = 2;
-  myCenterX = (int)(Math.random()*width);
-  myCenterY = (int)(Math.random()*height);
+  myCenterX = (int)(Math.random()*w);
+  myCenterY = (int)(Math.random()*h);
   myDirectionX = (int)(Math.random()*3+1);
   myDirectionY = (int)(Math.random()*3+1);
   myPointDirection = (int)(Math.random()*360);  
