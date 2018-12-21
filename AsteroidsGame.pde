@@ -2,11 +2,11 @@ Spaceship ship;
 ArrayList<Asteroid> rocks = new ArrayList<Asteroid>();
 Star[] stars = new Star[1000];
 ArrayList<Bullet> bullets = new ArrayList<Bullet>();
-int w = 700;
-int h = 700;
+int w = 600;
+int h = 600;
 public void setup() 
 {
-  size(700,700);
+  size(600,600);
   background(0);
   ship = new Spaceship();
   for(int i = 0; i<stars.length; i++) {stars[i] = new Star();}
